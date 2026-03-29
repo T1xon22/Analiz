@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Siuntų apdorojimo ir sekimo proceso blokų schema</title>
+<style>
+  body {
+    margin: 0;
+    background: #f4f6f8;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #1f2937;
+  }
+
+  .wrap {
+    width: 980px;
+    margin: 24px auto;
+    background: #ffffff;
+    border: 1px solid #dbe3ea;
+    border-radius: 22px;
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+    padding: 28px;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    color: #243444;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #667485;
+    margin-bottom: 24px;
+  }
+
+  .diagram {
+    position: relative;
+    width: 920px;
+    height: 1520px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #fbfcfd 0%, #f7f9fb 100%);
+    border: 1px solid #e5ebf1;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  svg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .node {
+    position: absolute;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid #cfd8e3;
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 14px 16px;
+    color: #223041;
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .startend {
+    width: 250px;
+    height: 66px;
+    border-radius: 999px;
+    font-weight: 700;
+    left: 335px;
+  }
+
+  .process {
+    width: 300px;
+    min-height: 78px;
+    border-radius: 18px;
+    left: 310px;
+  }
+
+  .side {
+    width: 260px;
+    min-height: 78px;
+    border-radius: 18px;
+  }
+
+  .decision-text {
+    position: absolute;
+    width: 140px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #223041;
+    pointer-events: none;
+  }
+
+  .label {
+    position: absolute;
+    background: rgba(255,255,255,0.94);
+    border: 1px solid #dde5ec;
+    border-radius: 999px;
+    padding: 6px 11px;
+    font-size: 12px;
+    color: #4a5a6b;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05);
+  }
+
+  .arrow {
+    stroke: #7c8998;
+    stroke-width: 2.2;
+    fill: none;
+  }
+
+  .diamond {
+    fill: #ffffff;
+    stroke: #cfd8e3;
+    stroke-width: 1.2;
+    filter: drop-shadow(0 6px 14px rgba(15, 23, 42, 0.06));
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="title">Siuntų apdorojimo ir sekimo proceso blokų schema</div>
+    <div class="subtitle">Veiksmų seka pagal viršutinio lygio DFD</div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 920 1520" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrowEnd" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#7c8998"></path>
+          </marker>
+        </defs>
+
+        <path class="arrow" d="M460 90 L460 140" marker-end="url(#arrowEnd)"/>
+        <path class="arrow" d="M460 218 L460 270" marker-end="url(#arrowEnd)"/>
+        <path class="arrow" d="M460 348 L460 430" marker-end="url(#arrowEnd)"/>
+
+        <path class="arrow" d="M370 490 L300 490" marker-end="url(#arrowEnd)"/>
+        <path class="arrow" d="M170 450 L170 309 L310 309" marker-end="url(#arrowEnd)"/>
+
+        <path class="arrow" d="M460 550 L460 590" marker-end="url(#arrowEnd)"/>
+        <path class="arrow" d="M460 668 L460 720" marker-end="url(#arrowEnd)"/>
+        <path class="arrow" d="M460 798 L460 850" marker-end="url(#arrowEnd)"/>
+        <path class="arrow" d="M460 928 L460 1010" marker-end="url(#arrowEnd)"/>
+
+        <path class="arrow" d="M550 1070 L620 1070" marker-end="url(#arrowEnd)"/>
+        <path class="arrow" d="M750 1118 L750 889 L610 889" marker-end="url(#arrowEnd)"/>
+
+        <path class="arrow" d="M460 1130 L460 1170" marker-end="url(#arrowEnd)"/>
+        <path class="arrow" d="M460 1248 L460 1300" marker-end="url(#arrowEnd)"/>
+        <path class="arrow" d="M460 1378 L460 1435" marker-end="url(#arrowEnd)"/>
+
+        <polygon class="diamond" points="460,430 550,490 460,550 370,490"/>
+        <polygon class="diamond" points="460,1010 550,1070 460,1130 370,1070"/>
+      </svg>
+
+      <div class="node startend" style="top: 24px;">Pradžia</div>
+
+      <div class="node process" style="top: 140px;">
+        Priimti siuntą
+      </div>
+
+      <div class="node process" style="top: 270px;">
+        Patikrinti siuntos ir gavėjo duomenis
+      </div>
+
+      <div class="decision-text" style="top: 453px; left: 390px;">
+        Ar duomenys teisingi ir pilni?
+      </div>
+
+      <div class="node side" style="top: 451px; left: 40px;">
+        Patikslinti duomenis
+      </div>
+
+      <div class="node process" style="top: 590px;">
+        Užregistruoti siuntą sistemoje
+      </div>
+
+      <div class="node process" style="top: 720px;">
+        Perduoti siuntą rūšiavimui
+      </div>
+
+      <div class="node process" style="top: 850px;">
+        Perduoti siuntą logistikai ir atnaujinti būseną
+      </div>
+
+      <div class="decision-text" style="top: 1050px; left: 395px;">
+        Ar siunta pristatyta?
+      </div>
+
+      <div class="node side" style="top: 1031px; left: 620px;">
+        Tęsti transportavimą ir atnaujinti sekimo duomenis
+      </div>
+
+      <div class="node process" style="top: 1170px;">
+        Fiksuoti pristatymo rezultatą
+      </div>
+
+      <div class="node process" style="top: 1300px;">
+        Pateikti informaciją klientui
+      </div>
+
+      <div class="node startend" style="top: 1435px;">Pabaiga</div>
+
+      <div class="label" style="top: 468px; left: 316px;">Ne</div>
+      <div class="label" style="top: 562px; left: 474px;">Taip</div>
+      <div class="label" style="top: 1048px; left: 560px;">Ne</div>
+      <div class="label" style="top: 1142px; left: 474px;">Taip</div>
+    </div>
+  </div>
+</body>
+</html>
